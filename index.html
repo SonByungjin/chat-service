@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hongjong</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="Hongjong">
+    <div class="jongtaek">
+      <img src="./img/jong.png" />
+    </div>
+    <div
+      style={{ width: this.state.distance }}
+      class="betweenSpace"
+    ></div>
+    <div class="yechan">
+      <div>
+        <img src="./img/chan.jpg" />
+      </div>
+
+    </div>
+  </div>
+  <button onClick>야, 나 없다고 해</button>
+  <p>클릭해보세요</p>
+  <script>
+    const button = document.querySelector('button');
+    const space = document.querySelector('.betweenSpace');
+    let count = 0;
+    
+    button.addEventListener('click', function() {
+      count = count + 10
+      space.style.width = count + 'px'
+    })
+  </script>
+</body>
+</html>
