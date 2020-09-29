@@ -1,0 +1,39 @@
+.Coinone {
+  .Nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    .navWrap {
+      max-width: 1300px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menuContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .iconImg {
+        margin-right: 10px;
+      }
+    }
+  }
+  .userInfo {
+    span {
+      color: gray;
+      font-size: 13px;
+      padding: 3px 5px;
+      margin: 0 5px;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  }
+}

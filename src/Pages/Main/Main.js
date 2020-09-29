@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import "./Main.scss";
 
 const Main = () => {
@@ -40,16 +41,34 @@ const Main = () => {
   }, [id]);
 
   return (
-    <div className="Main">
-      <div>Main</div>
-      <div>
-        <span>{number}만큼 담대하게</span>
+    <Flex>
+      <div className="Main">
+        <Border>
+          <div>Main</div>
+          <div>
+            <span>{number}만큼 담대하게</span>
+          </div>
+          <button name={id} onClick={plusNum}>
+            담대버튼
+          </button>
+        </Border>
       </div>
-      <button name={id} onClick={plusNum}>
-        담대버튼
-      </button>
-    </div>
+    </Flex>
   );
 };
+
+const Border = styled.div`
+  border: 1px solid black;
+  width: 500px;
+  text-align: center;
+  margin: 10px 0;
+  padding: 20px 0;
+`;
+
+const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default Main;
