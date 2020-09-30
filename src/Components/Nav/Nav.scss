@@ -1,28 +1,43 @@
+@import "../../Styles/common.scss";
+
 .Coinone {
   .Nav {
     width: 100%;
     position: fixed;
     top: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // padding: 20px;
+    @include flex(center, center);
     background-color: white;
     .navWrap {
       max-width: 1300px;
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(space-between, center);
     }
 
     .menuContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(center, center);
 
       .iconImg {
         margin-right: 10px;
+      }
+
+      .menuTexts {
+        @include flex(center, center);
+
+        .menuTextAndDetail {
+          position: relative;
+
+          .menuTextContainer {
+            height: 70px;
+            display: flex;
+            align-items: center;
+          }
+
+          .menuDatailContainer {
+            position: absolute;
+            width: 200px;
+          }
+        }
       }
     }
   }

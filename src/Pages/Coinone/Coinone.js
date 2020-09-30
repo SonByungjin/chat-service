@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Nav from "../../Components/Nav/Nav";
+import Graph from "../Graph/Graph";
 import "./Coinone.scss";
 
 const Coinone = () => {
@@ -43,7 +44,7 @@ const Coinone = () => {
           <ul className="tagContainer">
             {tagContents.map((tagContent, idx) => {
               return (
-                <TagStyle tagIdx={tagIdx} idx={idx}>
+                <TagStyle key={idx} tagIdx={tagIdx} idx={idx}>
                   <li key={idx} onClick={() => clickTag(idx)}>
                     {tagContent}
                   </li>
@@ -57,7 +58,9 @@ const Coinone = () => {
           <span className="magnifyingGlass"></span>
         </div>
       </div>
-      <div className="graphSection"></div>
+      <div className="graphSection">
+        <Graph />
+      </div>
       <div className="introduceSection"></div>
       <footer>footer 예정</footer>
     </div>

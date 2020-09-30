@@ -1,52 +1,66 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import menuData from "./menuData";
 import "./Nav.scss";
 
 const Nav = () => {
-  const [menu, changeMenu] = useState({
-    id: 0,
-    menuContents: [],
-  });
-  const { id, menuContents } = menu;
+  const [menu, changeMenu] = useState(menuData);
+
+  const { menuContents, menuValid } = menu;
 
   const clickMenu = (idx) => {
     console.log(idx);
-  };
-
-  const getDataInitial = () => {
+    let handleMenuDeatail = menuValid;
+    handleMenuDeatail[idx] = !handleMenuDeatail[idx];
+    console.log(handleMenuDeatail);
     changeMenu({
       ...menu,
-      menuContents: [
-        ...menuContents,
-        "간편구매",
-        "거래소",
-        "프로차트",
-        "자산",
-        "코인정보",
-        "플러스",
-      ],
+      menuValid: handleMenuDeatail,
     });
   };
 
   useEffect(() => {
-    getDataInitial();
-  }, []);
+    console.log(menu);
+  });
 
   return (
     <div className="Nav">
       <div className="navWrap">
         <div className="menuContainer">
           <div className="iconImg">
-            <img src="https://coinone.co.kr/common/assets/images/coinone_logo/coinone_logo_blue.svg" />
+            <img alt="logo_img" src="/images/coinone_logo_blue.svg" />
           </div>
           <div className="menuTexts">
-            {menuContents.map((menuContent, idx) => {
+            {menuContents.map((menu, idx) => {
+              const { id, menuName, menuDetail } = menu;
               return (
-                <MenuStyle>
-                  <span key={idx} className="menuText">
-                    {menuContent}
-                  </span>
-                </MenuStyle>
+                <div
+                  onMouseOver={() => clickMenu(idx)}
+                  onMouseOut={() => clickMenu(idx)}
+                  className="menuTextAndDetail"
+                >
+                  <div className="menuTextContainer">
+                    <MenuStyle key={id}>
+                      <span key={id} className="menuText">
+                        {menuName}
+                      </span>
+                    </MenuStyle>
+                  </div>
+                  <MenuDetailValid validIdx={menuValid[idx]}>
+                    <div className="menuDatailContainer">
+                      <MenuDetail
+                        menuDatil={menuDetail}
+                        validIdx={menuValid[idx]}
+                      >
+                        <ul className="menuDetail">
+                          {menuDetail.map((menuDetail) => {
+                            return <li>{menuDetail}</li>;
+                          })}
+                        </ul>
+                      </MenuDetail>
+                    </div>
+                  </MenuDetailValid>
+                </div>
               );
             })}
           </div>
@@ -61,8 +75,34 @@ const Nav = () => {
 };
 
 const MenuStyle = styled.span`
+  cursor: pointer;
   font-weight: 600;
-  margin 0 20px
+  margin: 10px 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  &:hover {
+    background-color: rgb(229, 249, 255);
+  }
+`;
+
+const MenuDetailValid = styled.div`
+  pointer-events: ${(props) => (props.validIdx ? null : "none")};
+`;
+
+const MenuDetail = styled.ul`
+  display: ${(props) => (props.menuDatil.length === 0 ? "none" : null)};
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  opacity: ${(props) => (props.validIdx ? 1 : 0)};
+  li {
+    padding: 10px;
+    &:hover {
+      cursor: ${(props) => props.validIdx && "pointer"};
+      background-color: rgb(229, 249, 255);
+    }
+  }
 `;
 
 export default Nav;

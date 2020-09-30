@@ -1,3 +1,5 @@
+@import "../../Styles/common.scss";
+
 .Coinone {
   .searchWrap {
     width: 100%;
@@ -29,5 +31,11 @@
         }
       }
     }
+  }
+  .graphSection {
+    @include flex(center, center);
+    width: 100%;
+    height: 600px;
+    border: 1px solid lightgray;
   }
 }
