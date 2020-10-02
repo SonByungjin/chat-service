@@ -6,7 +6,10 @@ import "./Graph.scss";
 const Graph = () => {
   const options = {
     xAxis: {
-      categories: "datetime",
+      type: "datetime",
+      dateTimeLabelFormats: {
+        day: "%d %b",
+      },
     },
     chart: {
       type: "line",
@@ -27,8 +30,8 @@ const Graph = () => {
           95.6,
           54.4,
         ],
-        pointStart: Date.UTC(2010, 0, 1),
-        pointInterval: 3600 * 1000,
+        pointStart: Date.UTC(2013, 0, 31, 6, 0, 0, 0),
+        pointInterval: 24 * 3600 * 1000 * 1,
       },
     ],
   };
