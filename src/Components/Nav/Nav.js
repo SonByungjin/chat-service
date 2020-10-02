@@ -9,19 +9,17 @@ const Nav = () => {
   const { menuContents, menuValid } = menu;
 
   const clickMenu = (idx) => {
-    console.log(idx);
     let handleMenuDeatail = menuValid;
     handleMenuDeatail[idx] = !handleMenuDeatail[idx];
-    console.log(handleMenuDeatail);
     changeMenu({
       ...menu,
       menuValid: handleMenuDeatail,
     });
   };
 
-  useEffect(() => {
-    console.log(menu);
-  });
+  // useEffect(() => {
+  //   console.log(menu);
+  // });
 
   return (
     <div className="Nav">

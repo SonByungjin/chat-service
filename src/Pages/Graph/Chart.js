@@ -14,6 +14,15 @@ class Chart extends Component {
     );
   }
 
+  componentDidUpdate() {
+    if (this.props.allowChartUpdate !== false) {
+      this.chart.update(
+        this.props.options,
+        ...(this.props.updateArgs || [true, true])
+      );
+    }
+  }
+
   componentWillUnmount() {
     this.chart.destroy();
   }
