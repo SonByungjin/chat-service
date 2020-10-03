@@ -62,7 +62,6 @@ const Coinone = () => {
         <Graph />
       </div>
       <div className="introduceSection"></div>
-      <footer>footer 예정</footer>
     </div>
   );
 };

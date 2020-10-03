@@ -5,54 +5,8 @@ import "./Graph.scss";
 
 const Graph = () => {
   const [chartData, updateData] = useState({});
+  const [stockIdx, plusIdx] = useState(1);
 
-  // const options = {
-  //   xAxis: {
-  //     type: "datetime",
-  //     dateTimeLabelFormats: {
-  //       day: "%d %b",
-  //     },
-  //   },
-  //   chart: {
-  //     type: "line",
-  //   },
-  //   series: [
-  //     {
-  //       data: [
-  //         29.9,
-  //         71.5,
-  //         106.4,
-  //         129.2,
-  //         144.0,
-  //         176.0,
-  //         135.6,
-  //         148.5,
-  //         216.4,
-  //         194.1,
-  //         95.6,
-  //         54.4,
-  //         29.1,
-  //         71.2,
-  //         106.4,
-  //         129.2,
-  //         144.1,
-  //         176.0,
-  //         135.6,
-  //         148.8,
-  //         216.4,
-  //         194.5,
-  //         95.6,
-  //         54.4,
-  //       ],
-  //       pointStart: Date.UTC(2013, 9, 1),
-  //       pointInterval: 24 * 3600 * 1000 * 1,
-  //     },
-  //   ],
-  // };
-
-  // const ClickEvent = () => {
-  //   updateData(options);
-  // };
   const ClickEvent = () => {
     fetch("/data/stockData.json")
       .then((res) => res.json())
@@ -61,8 +15,35 @@ const Graph = () => {
       });
   };
 
+  const getStockData = (idx) => {
+    console.log("success");
+    fetch("/data/stockSeriesData.json")
+      .then((res) => res.json())
+      .then((res) => {
+        updateData({
+          ...chartData,
+          title: {
+            text: res.data[idx].Name,
+          },
+          series: [
+            {
+              data: res.data[idx].value,
+              pointStart: Date.UTC(2015, 1, 1),
+              pointInterval: 24 * 3600 * 1000 * 1,
+            },
+          ],
+        });
+      });
+  };
+
+  const changeData = () => {
+    plusIdx(stockIdx + 1);
+    getStockData(stockIdx);
+  };
+
   useEffect(() => {
     ClickEvent();
+    getStockData(0);
   }, []);
 
   useEffect(() => {
@@ -78,7 +59,7 @@ const Graph = () => {
       </GraphContainer>
       <Container>
         <div className="stocksContainer">
-          <button>TRY</button>
+          <button onClick={changeData}>ChageStockData</button>
         </div>
       </Container>
     </div>

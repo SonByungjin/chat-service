@@ -17,10 +17,6 @@ const Nav = () => {
     });
   };
 
-  // useEffect(() => {
-  //   console.log(menu);
-  // });
-
   return (
     <div className="Nav">
       <div className="navWrap">
@@ -88,6 +84,7 @@ const MenuDetailValid = styled.div`
 `;
 
 const MenuDetail = styled.ul`
+  z-index: ${(props) => (props.validIdx ? 100 : 0)};
   display: ${(props) => (props.menuDatil.length === 0 ? "none" : null)};
   border: 1px solid lightgray;
   border-radius: 10px;
