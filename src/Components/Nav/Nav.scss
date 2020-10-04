@@ -5,6 +5,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 10;
     @include flex(center, center);
     background-color: white;
 
@@ -31,6 +32,9 @@
             height: 70px;
             display: flex;
             align-items: center;
+            @media only screen and (max-width: 850px) {
+              opacity: 0;
+            }
           }
 
           .menuDatailContainer {
@@ -43,6 +47,9 @@
   }
   .userInfo {
     span {
+      @media only screen and (max-width: 850px) {
+        display: none;
+      }
       color: gray;
       font-size: 13px;
       padding: 3px 5px;

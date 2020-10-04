@@ -22,14 +22,12 @@ const Graph = () => {
       .then((res) => {
         updateData({
           ...chartData,
-          title: {
-            text: res.data[idx].Name,
-          },
           series: [
             {
               data: res.data[idx].value,
               pointStart: Date.UTC(2015, 1, 1),
               pointInterval: 24 * 3600 * 1000 * 1,
+              name: res.data[idx].Name,
             },
           ],
         });
@@ -75,7 +73,8 @@ const GraphContainer = styled.div`
 
 const Container = styled.div`
   border: 1px solid lightgray;
-  width: 50%;
+  max-width: 480px;
+  width: 100%;
   height: 80%;
   margin: 10px;
 `;

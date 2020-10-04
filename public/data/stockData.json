@@ -1,7 +1,7 @@
 {
   "stock": [
     {
-      "title": {},
+      "title": { "text": "S&P 500 stock data (15'~16`)" },
       "xAxis": {
         "type": "datetime",
         "dateTimeLabelFormats": {
