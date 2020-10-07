@@ -1,0 +1,61 @@
+@import "../../Styles/common.scss";
+
+.Coinone {
+  .Nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    @include flex(center, center);
+    background-color: white;
+
+    .navWrap {
+      max-width: 1300px;
+      width: 100%;
+      @include flex(space-between, center);
+    }
+
+    .menuContainer {
+      @include flex(center, center);
+
+      .iconImg {
+        margin-right: 10px;
+      }
+
+      .menuTexts {
+        @include flex(center, center);
+
+        .menuTextAndDetail {
+          position: relative;
+
+          .menuTextContainer {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            @media only screen and (max-width: 850px) {
+              opacity: 0;
+            }
+          }
+
+          .menuDatailContainer {
+            position: absolute;
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+  .userInfo {
+    span {
+      @media only screen and (max-width: 850px) {
+        display: none;
+      }
+      color: gray;
+      font-size: 13px;
+      padding: 3px 5px;
+      margin: 0 5px;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  }
+}

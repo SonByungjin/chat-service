@@ -1,0 +1,24 @@
+@import "../../Styles/common.scss";
+
+.Coinone {
+  .Graph {
+    @include flex(center, center);
+    width: 1500px;
+    height: 100%;
+    @media (max-width: 1300px) {
+      display: block;
+    }
+
+    .stocksContainer {
+      height: 100%;
+      @include flex(center, center);
+      button {
+        cursor: pointer;
+        font: 1em sans-serif;
+        font-weight: 1000;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}

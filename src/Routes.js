@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./Components/ScrollToTop";
 import Main from "./Pages/Main/Main";
-import Sub from "./Pages/Sub/Sub";
+import Coinone from "./Pages/Coinone/Coinone";
 
 class Routes extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Routes extends React.Component {
         <ScrollToTop />
         <Switch>
           <Route exact path="/main" component={Main} />
-          <Route exact path="/sub" component={Sub} />
+          <Route exact path="/coinone" component={Coinone} />
         </Switch>
       </Router>
     );
