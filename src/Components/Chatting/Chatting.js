@@ -47,7 +47,7 @@ const Chatting = () => {
     <ChattingWrap>
       <ChattingBox>
         <ChatNav>
-          <span>채팅</span>
+          <span>위코드 대나무숲</span>
         </ChatNav>
         <Monitor id="chatMonitor">
           {chatMonitor.map((el, idx) => (
@@ -74,8 +74,9 @@ const Chatting = () => {
 export default Chatting;
 
 const ChattingWrap = styled.div`
-  width: 383px;
-  height: 200px;
+  max-width: 500px;
+  width: 100%;
+  height: 500px;
 `;
 
 const ChattingBox = styled.div`
@@ -91,8 +92,6 @@ const Monitor = styled.div`
   div {
     margin: 5px 0 20px 0;
     width: 100%;
-    /* ${({ theme }) =>
-      theme.border('3px', 'solid', '#dbe8ff', null, '5px')}; */
     span {
       padding: 1px 5px;
       ${({ theme }) => theme.border('3px', 'solid', '#dbe8ff', null, '5px')}
