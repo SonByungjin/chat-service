@@ -29,3 +29,9 @@ module.exports = {
     '@babel/plugin-proposal-class-properties',
   ],
 };
+/* 웹팩 설정 boilerplate 
+ https://github.com/FerJSsilva/webpack-4-react-boilerplate
+ rm rf node_modules yarn.lock
+ yarn install
+ yarn start
+ */
