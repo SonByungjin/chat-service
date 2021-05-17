@@ -1,0 +1,26 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Hongjong {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.betweenSpace {
+  width: 0px;
+}
+img {
+  width: 500px;
+}
+button {
+  font-size: 50px;
+}
