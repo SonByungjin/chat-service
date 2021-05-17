@@ -1,0 +1,62 @@
+body {
+  background-image:url("https://live.staticflickr.com/4847/46148146934_db6dec6e77_b.jpg");
+  background-size:cover;
+  font-family: sans-serif;
+}
+h1 {
+  font-family: cursive;
+  color:cornflowerblue;
+  font-size: 48px;
+}
+#first_h2{
+  margin-top:10%;  
+}
+h2, p, img{
+  width:150px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:10%;
+}
+.content_img{
+  border: 10px solid lightblue;
+  border-radius:100px;
+}
+#profile{
+  text-align:center;  
+}
+#profile div img{
+  width:100px;
+  margin-top:30%
+}
+#click{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5%
+}
+header {  
+  height: 75px;
+  padding: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+span{
+  font-size:24px;
+}
+#major:hover{
+  color:lightgreen;
+}
+#hobby:hover{
+  color:orange;
+}
+#career:hover{
+  color:lightblue;
+}
+#goal:hover{
+  color:lightyellow;
+}
